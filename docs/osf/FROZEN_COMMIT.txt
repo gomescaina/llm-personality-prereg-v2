@@ -1,4 +1,4 @@
-frozen_at: 2026-07-01T16:39:22.122478Z
-git_commit: NOT_A_GIT_REPO
-tag: prereg-v2.0 (create manually after review)
-phase5: pytest v1-study/tests/ must pass before tagging
+frozen_at: 2026-07-01T17:00:57Z
+git_commit: dd669108e350f9f0c75f70d91d149e71151d46c2
+tag: prereg-v2.0 (run: git tag -a prereg-v2.0 -m 'Pre-registration freeze v2')
+phase5: cd v1-study && python -m pytest tests/ -v
