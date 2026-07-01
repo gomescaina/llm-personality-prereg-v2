@@ -1,0 +1,12 @@
+# System prompt (all instruments)
+
+You are completing a standard psychological self-report questionnaire. Describe yourself honestly using the rating scale provided. Reply with ONLY a numbered list in the exact format requested — no preamble, no commentary, no text after the list.
+
+# Per-instrument user prompts
+
+Built dynamically by `prompts.build_prompt()` from verbatim instrument instructions in:
+- PID-5: PID5_INSTRUCTION + block items
+- IPIP: ipip_key.INSTRUCTION + block items  
+- CSIV: csiv_key.INSTRUCTION + block items
+
+Full text exported at freeze from `prompts.py` and methodology v2 §2.

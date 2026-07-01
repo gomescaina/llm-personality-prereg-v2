@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Personality and interpersonal values in large language models: methodology for Pedro's validation</title>
+  <style>
+    @page { size: A4; margin: 22mm 20mm 22mm 20mm; }
+    html { font-size: 12.5pt; }
+    body {
+      font-family: Georgia, "Times New Roman", Times, serif;
+      color: #1a1a1a;
+      background: #fff;
+      line-height: 1.78;
+      max-width: 7.0in;
+      margin: 0 auto;
+      padding: 1.1in 0.85in 1.3in;
+    }
+    .cover {
+      text-align: center;
+      padding: 0.5rem 0 1.8rem;
+      margin-bottom: 1.55rem;
+      border-bottom: 0.5pt solid #1a1a1a;
+    }
+    h1 {
+      font-size: 1.62rem;
+      font-weight: normal;
+      letter-spacing: 0.01em;
+      margin: 0 0 0.65rem;
+      line-height: 1.32;
+    }
+    .subtitle {
+      font-size: 1.12rem;
+      font-style: italic;
+      margin: 0 0 1.1rem;
+      color: #333;
+    }
+    .meta {
+      font-size: 0.98rem;
+      line-height: 1.6;
+      color: #444;
+    }
+    .meta p { margin: 0.2em 0; }
+    .lead {
+      margin: 1.6rem 0 1.7rem;
+      padding: 1rem 0;
+      border-top: 0.5pt solid #bbb;
+      border-bottom: 0.5pt solid #bbb;
+      font-size: 1.08rem;
+    }
+    .lead-label {
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 0.55rem;
+      color: #555;
+    }
+    h2 {
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin-top: 2.1rem;
+      margin-bottom: 0.75rem;
+      page-break-after: avoid;
+    }
+    h3 {
+      font-size: 1.12rem;
+      font-weight: bold;
+      margin-top: 1.5rem;
+      margin-bottom: 0.55rem;
+      page-break-after: avoid;
+    }
+    p { margin: 0 0 0.95em; text-align: justify; hyphens: auto; }
+    ul, ol { margin: 0 0 0.95em 1.3em; }
+    li { margin-bottom: 0.5em; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0.85em 0 1.2em;
+      font-size: 10.5pt;
+      line-height: 1.6;
+    }
+    caption {
+      caption-side: top;
+      text-align: left;
+      font-weight: bold;
+      font-size: 11pt;
+      margin-bottom: 0.55rem;
+    }
+    thead th {
+      border-top: 1pt solid #1a1a1a;
+      border-bottom: 0.75pt solid #1a1a1a;
+      padding: 0.55rem 0.4rem 0.45rem;
+      text-align: left;
+      vertical-align: bottom;
+      font-weight: bold;
+    }
+    tbody td {
+      border-bottom: 0.5pt solid #ccc;
+      padding: 0.5rem 0.4rem;
+      text-align: left;
+      vertical-align: top;
+    }
+    tbody tr:last-child td {
+      border-bottom: 1pt solid #1a1a1a;
+    }
+    .callout {
+      margin: 1.05rem 0 1.3rem;
+      padding: 0.9rem 1.15rem;
+      border-left: 2.5pt solid #1a1a1a;
+      background: #f7f6f2;
+      font-size: 11.5pt;
+      line-height: 1.62;
+    }
+    .callout-title {
+      font-weight: bold;
+      font-size: 11.5pt;
+      margin-bottom: 0.45rem;
+    }
+    .toc {
+      font-size: 11pt;
+      margin: 0 0 1.4rem 1.2em;
+      line-height: 1.9;
+    }
+    .toc li { margin-bottom: 0.2em; }
+    .sign-off {
+      margin-top: 2rem;
+      font-size: 1.05rem;
+      font-style: italic;
+    }
+    .refs { font-size: 10.5pt; line-height: 1.62; }
+    .refs p {
+      text-align: left;
+      margin-bottom: 0.6em;
+      padding-left: 1.55em;
+      text-indent: -1.55em;
+    }
+    code, .mono { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; font-size: 10pt; }
+    .example {
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      font-size: 10.5pt;
+      background: #f1f0ec;
+      padding: 0.65rem 0.85rem;
+      margin: 0.5rem 0 1.1rem;
+      white-space: pre-wrap;
+      border-left: 2pt solid #999;
+    }
+    @media print {
+      body { padding: 0; max-width: none; }
+      .page-break { page-break-before: always; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="cover">
+  <h1>Personality and interpersonal values in large language models:<br>methodology for Pedro's validation</h1>
+  <p class="subtitle">v2 &mdash; for Pedro sign-off before OSF pre-registration and data collection</p>
+  <div class="meta">
+    <p><strong>Cainã &middot; meusvalores.app &middot; June 2026</strong></p>
+    <p>Companion to the Pedro proposal (June 2026, draft 4) and the submitted values manuscript</p>
+  </div>
+</div>
+
+<div class="lead">
+  <div class="lead-label">Purpose of this document</div>
+  <p style="margin:0;text-align:justify;">
+    This note reports the methodological decisions for v2: three English instruments (PID-5, IPIP-NEO-300, CSIV-64), a 21-model panel (seven providers &times; three tiers), N = 30 sessions per model, and pre-registered hypotheses on psychometric convergence, CSIV circumplex structure, and CSIV&harr;Big Five links at vector and octant level. Macrotheme/meusvalores data, behavioural criterion tasks, and public/anonymous administration are deferred to separate follow-ups. If you agree, we freeze the protocol and scripts, pre-register on OSF, then collect data. Nothing is fixed until you sign off.
+  </p>
+</div>
+
+<h2>Contents</h2>
+<ol class="toc">
+  <li>What changed since the proposal</li>
+  <li>The three instruments in plain language</li>
+  <li>The panel and how we run it</li>
+  <li>Serapio-García assessment: do we need item-by-item?</li>
+  <li>Why N = 30 sessions per model</li>
+  <li>Reliability, validity, and what we compute</li>
+  <li>The hypotheses, descriptively (with answerability audit)</li>
+  <li>The role-norm question without personas</li>
+  <li>Three-layer joint profiles and intra-laboratory tier coherence</li>
+  <li>CSIV&harr;Big Five analysis (vectors and octants)</li>
+  <li>Cost</li>
+  <li>What is deferred and why</li>
+  <li>Limitations, stated plainly</li>
+  <li>Novel contribution</li>
+  <li>References</li>
+</ol>
+
+<h2>1. What changed since the proposal</h2>
+
+<p>
+The proposal you received left three questions open: which instruments, which instruction frame, and which analytic design. Since our meeting and a deeper reading of the instrument files, the Serapio-García et&nbsp;al.&nbsp;(2025) paper, and the 2024 PID-5 book, we have settled all three. Here is the reasoning, so you can challenge any of it.
+</p>
+
+<h3>1.1 Instruments fixed: PID-5, IPIP-NEO-300, CSIV, in English</h3>
+<p>
+We will administer three instruments, in English, using their validated originals. <strong>PID-5</strong> (220 items, 4-point scale) covers pathological personality traits on the DSM-5 Alternative Model; <strong>IPIP-NEO-300</strong> (300 items, 5-point scale) covers normal-range Big Five at the 30-facet level; <strong>CSIV-64</strong> (64 items, 5-point importance scale) covers interpersonal values on the eight-octant circumplex. Together they give us normal personality, pathological personality, and interpersonal values &mdash; three layers that no single published LLM personality study has combined on the same panel.
+</p>
+<p>
+We chose English for a concrete reason: CSIV has no validated Brazilian Portuguese adaptation, and the PID-5/IPIP-NEO-300 Portuguese translations are not in our files. Running all three in their validated originals maximizes psychometric comparability with the human normative data we will benchmark against (US census PID-5 norms; UK&ndash;Ireland IPIP norms; University of Idaho CSIV norms). The cost is a break in language continuity with the PT-BR values manuscript. We accept that cost and note it once in the limitations.
+</p>
+
+<h3>1.2 Human-like self-report elicitation, replacing the manuscript's decision-maker frame</h3>
+<p>
+The values manuscript instructed models to "prioritize as a decision-maker in the abstract, not to imitate an average human." That frame was deliberate for values, where we wanted to sample model priorities without a personal-life narrative. For personality and interpersonal values, we make the opposite choice: we use each instrument's <em>own standard self-report instructions</em> &mdash; the same wording a human reads when taking the test &mdash; and we present items the way a human sees them, in sectioned blocks, asking for a numbered list of responses. The reason is power. If we want to ask how close a model's trait profile is to a human distribution, the model has to take the test the way a human does. Every deviation from the human procedure is a confound we would then have to argue away. Human-like elicitation minimizes those confounds by construction.
+</p>
+
+<h3>1.3 Alternative A chosen; B and C deferred</h3>
+<p>
+The proposal floated several designs. We considered three in detail and are committing to one for v2. <strong>Alternative A (psychometric convergence)</strong> is the v2 design: sectioned-batched administration, reliability and convergent-validity analyses benchmarked against Serapio-García and human norms, CSIV circumplex fit, CSIV&harr;Big Five links at vector and octant level, and intra-laboratory tier comparison across a 21-model panel. <strong>Alternative B</strong> (batched vs item-by-item) and <strong>Alternative C</strong> (forced-choice CSIV extension) are deferred. Joint analysis with meusvalores.app macrotheme profiles is also deferred (cross-frame and construct mismatch). B and C remain on the shelf if v2 surfaces something they would address.
+</p>
+
+<h2>2. The three instruments in plain language</h2>
+
+<h3>2.1 PID-5 &mdash; pathological personality (DSM-5 Alternative Model)</h3>
+<p>
+The Personality Inventory for DSM-5 Adult Full version is a 220-item self-report measure of the 25 trait facets that operationalize the DSM-5 Alternative Model for Personality Disorders (Criterion B). Items are rated on a 4-point scale scored 0&ndash;3 (0 = <em>Very False or Often False</em>, 1 = <em>Sometimes or Somewhat False</em>, 2 = <em>Sometimes or Somewhat True</em>, 3 = <em>Very True or Often True</em>). The 25 facets load onto five higher-order domains: Negative Affect, Detachment, Antagonism, Disinhibition, and Psychoticism. The instrument also carries three validity scales &mdash; VRIN (inconsistent responding), ORS (overreporting), and PRD (underreporting) &mdash; that we will compute and report. The file lives at <code>PID-5\APA-DSM5TR-ThePersonalityInventoryForDSM5FullVersionAdult.pdf</code>, with the 2024 APA book <code>Understanding the Personality Inventory for DSM-5 (PID-5)</code> as our scoring and validity reference.
+</p>
+<p>
+<strong>Administration instructions we will use (verbatim from the APA PDF):</strong> "This is a list of things different people might say about themselves. We are interested in how you would describe yourself. There are no &lsquo;right&rsquo; or &lsquo;wrong&rsquo; answers. So you can describe yourself as honestly as possible, we will keep your responses confidential. We&rsquo;d like you to take your time and read each statement carefully, selecting the response that best describes you <em>generally</em>."
+</p>
+<p>
+<strong>Scoring:</strong> 16 reverse-coded items (3&ndash;0, 2&ndash;1, 1&ndash;2, 0&ndash;3), then facet means on the 0&ndash;3 metric, then domain means as the average of their constituent facets under the official 25-facet &rarr; 5-domain AMPD mapping. We report the APA 3-facet-per-domain worksheet scores as a sensitivity check. Validity scales: VRIN &ge; 17 flags inconsistent responding; ORS &ge; 3 flags overreporting; PRD &lt; 11 flags underreporting (the socially-desirable direction).
+</p>
+
+<h3>2.2 IPIP-NEO-300 &mdash; normal-range Big Five at facet level</h3>
+<p>
+The IPIP-NEO-300 is a 300-item public-domain representation of the NEO PI-R, scoring the five Big Five domains (Neuroticism, Extraversion, Openness, Agreeableness, Conscientiousness) each at six facets (30 facets total, 10 items per facet). Items are rated on a 5-point scale scored 1&ndash;5 (1 = <em>Very Inaccurate</em>, 2 = <em>Moderately Inaccurate</em>, 3 = <em>Neither Accurate Nor Inaccurate</em>, 4 = <em>Moderately Accurate</em>, 5 = <em>Very Accurate</em>). The files live at <code>IPIP NEO 300\</code> (printable questionnaire docx, scoring xlsx, item key).
+</p>
+<p>
+<strong>Administration instructions we will use (verbatim, canonical IPIP-NEO wording from Goldberg's IPIP site, used by Johnson's scoring tool):</strong> "The following pages contain phrases describing people's behaviors. Please use the rating scale next to each phrase to describe how accurately each statement describes you. Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate for each statement whether it is 1 = Very Inaccurate, 2 = Moderately Inaccurate, 3 = Neither Accurate Nor Inaccurate, 4 = Moderately Accurate, or 5 = Very Accurate as a description of you."
+</p>
+<p>
+<strong>Scoring:</strong> 148 reverse-keyed items via <code>6 &minus; raw</code>; facet raw scores are the sum of 10 final item scores (range 10&ndash;50); domain raw scores are the sum of six facets (range 60&ndash;300). Optional T-scores against the Johnson/Twomey UK&ndash;Ireland normative tabs (three age bands) via <code>(10 &times; ((Raw &minus; Mean) / SD)) + 50</code>.
+</p>
+
+<h3>2.3 CSIV-64 &mdash; interpersonal values on the circumplex</h3>
+<p>
+The Circumplex Scales of Interpersonal Values (Locke, 2000) measure the <em>importance</em> a person attaches to interpersonal outcomes, organized on the interpersonal circumplex defined by the bipolar dimensions of Agency (confident&harr;meek) and Communion (warm&harr;aloof). 64 items, 8 items per octant, rated on a 5-point importance scale scored 0&ndash;4 (0 = <em>not important to me</em>, 1 = <em>mildly important</em>, 2 = <em>moderately important</em>, 3 = <em>very important</em>, 4 = <em>extremely important</em>). The eight octants are PA (Agentic), BC (Agentic &amp; Uncommunal), DE (Uncommunal), FG (Unagentic &amp; Uncommunal), HI (Unagentic), JK (Unagentic &amp; Communal), LM (Communal), NO (Agentic &amp; Communal). The files live at <code>CSIV\</code> (Form, Scoring, Norms, circumplex R-package reference).
+</p>
+<p>
+<strong>Administration instructions we will use (verbatim master question from CSIV Form.pdf):</strong> "When I am in interpersonal situations (such as with close friends, with strangers, at work, at social gatherings, and so on), in general how important is it to me that I act or appear or am treated this way?"
+</p>
+<p>
+<strong>Scoring:</strong> no reverse items; each octant is the mean of its 8 items (range 0&ndash;4). Bipolar vectors: <code>AGENTIC = 0.25 &times; (PA &minus; HI + 0.707 &times; (BC + NO &minus; FG &minus; JK))</code>; <code>COMMUNAL = 0.25 &times; (LM &minus; DE + 0.707 &times; (NO + JK &minus; FG &minus; BC))</code>. We also compute AMP (vector length), ELE (elevation), R&sup2; (circumplex goodness-of-fit), and ANG (angular displacement), and compare to the University of Idaho CSIV-64 norms (N = 1,200).
+</p>
+
+<h3>2.4 How PID-5 maps onto the Big Five</h3>
+<p>
+The 2024 PID-5 book (pp.&nbsp;91&ndash;94) establishes the conceptual correspondence between PID-5 domains and FFM/Big Five domains, and the primary empirical studies (Gore &amp; Widiger, 2013, N = 445 undergraduates; Anderson, Sellbom, Wygant, &amp; Edens, 2013; Suzuki et&nbsp;al., 2015, IRT) confirm the alignment with reported effect-size magnitudes. We use both the directions and the magnitudes to pre-register convergent-validity predictions between PID-5 and IPIP-NEO-300.
+</p>
+<table>
+  <caption>Table 1. PID-5 &harr; Big Five (FFM) mapping and empirical convergence magnitude</caption>
+  <thead>
+    <tr><th>PID-5 domain</th><th>FFM / IPIP-NEO counterpart</th><th>Direction</th><th>Empirical magnitude</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Negative Affect</td><td>Neuroticism</td><td>+</td><td>strong</td></tr>
+    <tr><td>Detachment</td><td>Extraversion</td><td>&minus;</td><td>strong, but not specific (also loads on Neuroticism)</td></tr>
+    <tr><td>Antagonism</td><td>Agreeableness</td><td>&minus;</td><td>strong</td></tr>
+    <tr><td>Disinhibition</td><td>Conscientiousness</td><td>&minus;</td><td>strong</td></tr>
+    <tr><td>Psychoticism</td><td>Openness</td><td>+</td><td>modest (the weakest pairing; psychoticism taps Openness facets of ideas, fantasy, aesthetics)</td></tr>
+  </tbody>
+</table>
+<p>
+Gore &amp; Widiger (2013) confirmed all five alignments empirically, including the psychoticism&ndash;openness link that the original DSM-5 proposal did not predict. Anderson et&nbsp;al.&nbsp;(2013) reported the magnitudes above and, importantly, found that some PID-5 scales show <em>replicable deviations from their DSM-5 model placements at the facet level</em> &mdash; a finding that directly motivates our facet-level cross-loading test. Suzuki et&nbsp;al.&nbsp;(2015) used item response theory to show that the PID-5 and the IPIP-NEO measure the same four domains (neuroticism, extraversion, agreeableness, conscientiousness) as maladaptive extremes, with psychoticism and openness the partial exception. We therefore expect our IPIP-NEO &harr; PID-5 domain correlations to show the predicted signs with strong magnitudes for four pairings and a modest positive for Psychoticism&ndash;Openness, and we expect at least some facet-level placements to deviate from the DSM-5 assignments in LLMs just as they do in humans.
+</p>
+<p>
+Two cross-loading nuances from the book (p.&nbsp;92) make the facet-level test concrete: PID-5 <em>Depressivity</em> is assigned to Detachment but also loads on Negative Affect; <em>Suspiciousness</em> is assigned to Detachment in the PID-5 but maps onto Antagonism in the FFM. We test whether these dual-loading patterns survive in LLM facet-level correlations (H-E below).
+</p>
+
+<h3>2.5 The CSIV octants</h3>
+<table>
+  <caption>Table 2. CSIV octants, circumplex position, and agency/communion polarity</caption>
+  <thead>
+    <tr><th>Octant</th><th>Label</th><th>Position</th><th>Polarity</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>PA</td><td>Agentic</td><td>90&deg;</td><td>+A</td></tr>
+    <tr><td>BC</td><td>Agentic &amp; Uncommunal</td><td>135&deg;</td><td>+A, &minus;C</td></tr>
+    <tr><td>DE</td><td>Uncommunal</td><td>180&deg;</td><td>&minus;C</td></tr>
+    <tr><td>FG</td><td>Unagentic &amp; Uncommunal</td><td>225&deg;</td><td>&minus;A, &minus;C</td></tr>
+    <tr><td>HI</td><td>Unagentic</td><td>270&deg;</td><td>&minus;A</td></tr>
+    <tr><td>JK</td><td>Unagentic &amp; Communal</td><td>315&deg;</td><td>&minus;A, +C</td></tr>
+    <tr><td>LM</td><td>Communal</td><td>0&deg;/360&deg;</td><td>+C</td></tr>
+    <tr><td>NO</td><td>Agentic &amp; Communal</td><td>45&deg;</td><td>+A, +C</td></tr>
+  </tbody>
+</table>
+
+<h2 class="page-break">3. The panel and how we run it</h2>
+
+<p>
+We administer all three instruments through OpenRouter at temperature 1.0. The panel comprises <strong>21 models</strong>: seven providers at three tiers each. Every model receives N = 30 identical sessions. Six manuscript models remain in-panel; DeepSeek V4 Pro replaces manuscript DeepSeek V3 at tier 3, with V3.2 at tier 2.
+</p>
+
+<table>
+  <caption>Table 3. Twenty-one-model panel. &dagger; = manuscript Experiment 2 model (in-panel).</caption>
+  <thead>
+    <tr><th>Lab</th><th>Tier 1 (economy)</th><th>Tier 2 (mid)</th><th>Tier 3 (frontier)</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>OpenAI</td><td>GPT-4o-mini</td><td>GPT-4o &dagger;</td><td>GPT-4.1</td></tr>
+    <tr><td>Anthropic</td><td>Claude Haiku 4.5 &dagger;</td><td>Claude Sonnet 4.6</td><td>Claude Opus 4.6</td></tr>
+    <tr><td>Google</td><td>Gemini 2.5 Flash Lite &dagger;</td><td>Gemini 2.5 Flash</td><td>Gemini 2.5 Pro</td></tr>
+    <tr><td>Meta</td><td>Llama 3.1 8B Instruct</td><td>Llama 3.1 70B Instruct</td><td>Llama 3.3 70B Instruct &dagger;</td></tr>
+    <tr><td>Mistral</td><td>Mistral Small 3.2 24B</td><td>Mistral Medium 3.1</td><td>Mistral Large &dagger;</td></tr>
+    <tr><td>DeepSeek</td><td>DeepSeek V4 Flash<br><span class="mono">deepseek/deepseek-v4-flash</span></td><td>DeepSeek V3.2<br><span class="mono">deepseek/deepseek-v3.2</span></td><td>DeepSeek V4 Pro<br><span class="mono">deepseek/deepseek-v4-pro</span></td></tr>
+    <tr><td>Qwen</td><td>Qwen 2.5 72B Instruct &dagger;</td><td>Qwen3 Max</td><td>Qwen3 235B A22B</td></tr>
+  </tbody>
+</table>
+
+<p>
+OpenRouter slugs are frozen in the collection scripts at pre-registration. DeepSeek tier 2 uses V3.2 (mid-generation chat); tier 1 and 3 use V4 Flash and V4 Pro. Task text is English throughout.
+</p>
+
+<h3>3.0 Intra-laboratory analysis (secondary, descriptive)</h3>
+<p>
+For each lab we report tier-ladder metrics using adjacent-tier distances (T1&harr;T2, T2&harr;T3) and the full span (T1&harr;T3). With N = 7 labs &times; 3 tiers this remains descriptive.
+</p>
+
+<h3>3.1 Sectioned-batched administration</h3>
+<p>
+A human taking these instruments does not answer one isolated item per prompt. They read a page of items and mark each one. We mirror that. Items are presented in <em>blocks</em> that follow the paper-form layout: IPIP-NEO-300 in its six questionnaire sections (~50 items per block), PID-5 in ~7 blocks of ~32 items (matching the APA PDF page layout), and CSIV in a single block of 64. Each block is one API call. The model returns a numbered list, one line per item, with the numeric code and the anchor label. Sectioning keeps the response per call short enough that no model is tempted to truncate, while staying human-like &mdash; a human sees one section at a time.
+</p>
+
+<h3>3.2 Response format (a worked example)</h3>
+<p>
+For each item the model returns the item number, the numeric code, and the anchor label. The parser reads the first line of each numbered entry, rejects out-of-range values, and asks the model not to produce chain-of-thought before the answers. A PID-5 block reply looks like this:
+</p>
+<div class="example">1. 0 &mdash; Very False or Often False
+2. 1 &mdash; Sometimes or Somewhat False
+3. 2 &mdash; Sometimes or Somewhat True
+...
+32. 3 &mdash; Very True or Often True</div>
+<p>
+Where the gateway exposes logprobs over the anchor tokens, we capture them as a secondary channel &mdash; the analogue of the logprob-vs-hard-choice distinction in the manuscript. The primary analyses use the hard numeric responses, which is what a human produces.
+</p>
+
+<h3>3.3 What is logged</h3>
+<ul>
+  <li>Per block (inside each session JSON): model slug, <code>model_version</code> string from OpenRouter, verbatim <code>system_prompt</code> and <code>user_prompt</code>, raw response head, parse status (dropped, out-of-range counts), latency, token usage, cost, timestamp.</li>
+  <li>System and user prompts logged verbatim, never paraphrased across sessions.</li>
+  <li>Scoring scripts reproduce the published keys (PID-5 16 reverse items and 25-facet mapping; IPIP 148 reverse items via <code>6 &minus; raw</code>; CSIV octant means and vector formulas).</li>
+  <li>Statistical apparatus inherited from the manuscript: Benjamini&ndash;Hochberg FDR for exploratory octant&harr;domain matrix (tier 4).</li>
+</ul>
+
+<h2>4. Serapio-García assessment: do we need item-by-item?</h2>
+
+<p>
+You asked us to look hard at Serapio-García et&nbsp;al.&nbsp;(2025, <em>Nature Machine Intelligence</em> 7:1954&ndash;1968) and judge whether their design justifies running item-by-item instead of batched. We read the paper in full. The short answer is: it does not, for our purposes. Here is the reasoning.
+</p>
+
+<h3>4.1 What they did</h3>
+<p>
+Serapio-García's prompt is a structured assembly: a persona instruction, a biographic description, an item instruction, a single item, and an item postamble. For their reliability experiment they ran 1,250 simulated response profiles per model; for convergent validity, 2,250. These profiles vary across 50 biographic descriptions, 5 item instructions, 5 postambles, and (in the validity arm) 45 personas. That yields up to 675,000 responses per model. Their primary instrument is IPIP-NEO, with BFI as a convergent-validity partner.
+</p>
+
+<h3>4.2 What their resampling actually measures</h3>
+<p>
+Their reliability is computed <em>across varied prompting contexts</em> &mdash; personas, biographics, item instructions, postambles. The question they answer is: "does the model give consistent trait scores across different framings of the same item?" This is a <strong>cross-context consistency</strong> notion. It is the right notion for their goal, which is to evaluate whether LLM personality is measurable at all under realistic prompt variation. But it is not the notion a human-like administration needs.
+</p>
+
+<h3>4.3 Why item-by-item was necessary for them, not for us</h3>
+<p>
+They needed item-by-item because their design varies the item instruction and postamble per item and captures logprobs over response options. Item-by-item was an enabler of their variation design, not a psychometric advantage over batched per se. For human-like elicitation the relevant reliabilities are different and both computable from a single batched administration repeated N times: (a) internal consistency &alpha;/&omega; within a session, computable from the 300/220/64 items in one pass; (b) test&ndash;retest ICC across identical resamples at T = 1.0, computable from N passes. Neither requires item-by-item.
+</p>
+
+<h3>4.4 What we take from Serapio-García</h3>
+<ul>
+  <li><strong>An effect-size ceiling.</strong> Their IPIP-NEO &harr; BFI domain convergent correlations reach r &asymp; 0.80&ndash;0.90 for the strongest instruction-tuned models (GPT-4o average r<sub>conv</sub> = 0.90; Llama-2-Chat 70B = 0.80/0.83). We use this as the expected ceiling for our IPIP-NEO &harr; PID-5 convergence check.</li>
+  <li><strong>A criterion-validity template (their Fig. 3).</strong> They correlated IPIP-NEO domains with PVQ-RR value subscales and aggression subscales as external criteria. v2 does not replicate this with meusvalores macrothemes (deferred); instead CSIV&harr;Big Five links (&sect;6.6) provide the within-frame criterion layer.</li>
+  <li><strong>A validity benchmark for instruction-tuned models.</strong> Their finding that reliability and validity scale with size and instruction tuning motivates the 21-model tier panel.</li>
+</ul>
+
+<div class="callout">
+  <div class="callout-title">Conclusion on item-by-item</div>
+  We do <strong>not</strong> run item-by-item a priori. Sectioned-batched N = 30 gives us the reliabilities we need. Item-by-item is held as a <strong>contingency</strong>, triggered only if batched shows output truncation on the largest IPIP block or suspiciously flat/invariant profiles in the first sessions. If triggered, it runs at N = 10 for the affected model/instrument and is reported as exploratory.
+</div>
+
+<h2>5. Why N = 30 sessions per model</h2>
+
+<p>
+How many sessions per model? This is the parameter that most affects both cost and the precision of every per-architecture estimate, so it deserves its own reasoning.
+</p>
+
+<h3>5.1 The anchor: manuscript Experiment 2</h3>
+<p>
+The values manuscript ran 30 tournament sessions per model (Experiment 2; manuscript &sect;2.3). We match that for all 21 models. The legacy reporting subset is six in-panel manuscript models plus DeepSeek V4 Pro (replacing manuscript DeepSeek V3).
+</p>
+
+<h3>5.2 What N = 30 buys</h3>
+<ul>
+  <li><strong>Internal consistency (&alpha;/&omega;) per session</strong>, reported as mean &plusmn; SD across 30 sessions &mdash; a stable distribution, not a single noisy estimate.</li>
+  <li><strong>ICC(3,1) on domain scores</strong> across 30 identical resamples &mdash; a reliable test&ndash;retest estimate of how stable each architecture's domain scores are under sampling at T = 1.0.</li>
+  <li><strong>Domain mean per architecture</strong> with SE = SD/&radic;30, tight enough for the descriptive cross-architecture contrasts we will report.</li>
+  <li><strong>Stable PID-5 VRIN/ORS/PRD validity-scale distributions</strong> per architecture, so the role-norm test (&sect;8) rests on a distribution, not a single draw.</li>
+</ul>
+
+<h3>5.3 What N = 30 does not buy</h3>
+<p>
+It does not buy population-level inference about "LLMs." The between-architecture inference is descriptive at N = 21 architectures (14 added beyond legacy subset). N sessions per model governs <em>within-architecture precision</em>, not between-architecture power. We will state this in the Introduction and Methods, not only in fine print.
+</p>
+
+<h3>5.4 Adaptive extension (exploratory)</h3>
+<p>
+If the first 30 sessions per model reveal any domain with ICC &lt; .70 for a given model, we add +20 sessions for that model and flag the addition as exploratory in the analysis. This is not part of the pre-registered core; it is a safety valve for under-powered architectures.
+</p>
+
+<h2 class="page-break">6. Reliability, validity, and what we compute</h2>
+
+<p>
+For each architecture, on each instrument, we compute the following. Everything is pre-specified before data collection begins, except the exploratory flags.
+</p>
+
+<h3>6.1 Reliability</h3>
+<ul>
+  <li><strong>&alpha;/&omega; per facet, domain, and octant</strong>, per session, reported as mean &plusmn; SD across the 30 sessions. Facet-level &alpha; is computable because IPIP-NEO-300 has 10 items per facet and PID-5 has 4&ndash;14 items per facet.</li>
+  <li><strong>ICC(3,1) on domain scores</strong> across the 30 resamples, per architecture, per instrument.</li>
+  <li><strong>PID-5 validity scales</strong> &mdash; VRIN, ORS, PRD &mdash; computed per session, with the distribution and the proportion of sessions flagged per architecture (cutoffs: VRIN &ge; 17; ORS &ge; 3; PRD &lt; 11).</li>
+</ul>
+
+<h3>6.2 Convergent validity (IPIP-NEO &harr; PID-5)</h3>
+<p>
+We pre-register the five directional mappings of Table 1 (IPIP N &harr; PID-5 Negative Affect +; E &harr; Detachment &minus;; A &harr; Antagonism &minus;; C &harr; Disinhibition &minus;; O &harr; Psychoticism +) together with their empirical magnitudes from Gore &amp; Widiger (2013) and Anderson et&nbsp;al.&nbsp;(2013): strong for the first four pairings, modest for Psychoticism&ndash;Openness, with Detachment also showing a secondary load on Neuroticism. For each architecture we test whether the five domain&ndash;domain correlations have the predicted signs, whether their magnitudes rank as predicted (four strong, one modest), and we report the mean |r| across the panel. The Serapio-García IPIP&harr;BFI ceiling (r &asymp; 0.80&ndash;0.90 for strong instruction-tuned models) is our benchmark for the strong pairings. Suzuki et&nbsp;al.&nbsp;(2015) confirm via IRT that the PID-5 and IPIP-NEO measure the same four domains as maladaptive extremes, with psychoticism/openness the partial exception &mdash; so a modest Psychoticism&ndash;Openness correlation in LLMs would mirror the human finding rather than indicate failure.
+</p>
+
+<h3>6.3 Cross-loading preservation (facet-level)</h3>
+<p>
+From the PID-5 book (p.&nbsp;92): Depressivity is assigned to Detachment but also loads on Negative Affect; Suspiciousness is assigned to Detachment but maps onto Antagonism in the FFM. We test whether these dual-loading patterns are preserved in LLM facet-level within-architecture correlations. This is a fine-grained check that goes beyond domain-level convergence.
+</p>
+
+<h3>6.4 CSIV circumplex fit</h3>
+<p>
+For each architecture we compute R&sup2; (goodness-of-fit to the circumplex), AMP (vector length / amplitude), ELE (elevation), and ANG (angular displacement in degrees), using the formulas in <code>CSIV - Scoring.pdf</code>. We compare to the University of Idaho CSIV-64 norms (N = 1,200; means and SDs per octant and for the AGENTIC/COMMUNAL vectors). The question is whether models organize interpersonal values on the circumplex at all, and if so, where each architecture sits on the agency&ndash;communion plane.
+</p>
+
+<h3>6.5 Human-norm comparison (the payoff of human-like elicitation)</h3>
+<p>
+Because we administer in English with each instrument's standard instructions, model scores are directly comparable to human normative data. We report T-score profiles per architecture against:
+</p>
+<ul>
+  <li><strong>PID-5</strong> &mdash; US census-matched norms (N = 995 clean protocols; the 2024 book appendix; T = 50 domain raw &asymp; 0.50&ndash;0.81).</li>
+  <li><strong>IPIP-NEO-300</strong> &mdash; Johnson/Twomey UK&ndash;Ireland T-score tabs (three age bands).</li>
+  <li><strong>CSIV-64</strong> &mdash; U Idaho means and SDs per octant.</li>
+</ul>
+<p>
+This is the direct answer to the question you asked: how close are different LLMs to what we imagine, and how do they differ from one another and from human distributions. Each architecture gets a profile that a personality specialist can read.
+</p>
+
+<h3>6.6 CSIV&harr;Big Five links (confirmatory and secondary)</h3>
+<p>
+Interpersonal values on the circumplex are theoretically linked to Big Five traits in humans: Agency maps onto Extraversion and Conscientiousness; Communion maps onto Agreeableness and (weaker) Extraversion (Locke, 2000; Du et al., 2020; McCrae &amp; Costa, 1989). We test this in LLMs at two levels pre-registered before data collection.
+</p>
+<p>
+<strong>Confirmatory (H-G):</strong> architecture-level Spearman &rho; across the 21-model panel for CSIV AGENTIC/COMMUNAL vectors vs IPIP domain scores (E, A, C). Directional predictions: AGENTIC&harr;E (+), AGENTIC&harr;C (+), COMMUNAL&harr;A (+), COMMUNAL&harr;E (+). Success: correct sign on &ge; 3/4 pairings.
+</p>
+<p>
+<strong>Secondary (H-H):</strong> octant&harr;facet links within each architecture (session-level Pearson r, then panel summary). Each CSIV octant is paired with one or two IPIP-NEO facets by circumplex position (e.g., PA&harr;Assertiveness and Achievement-Striving; LM&harr;Altruism and Trust; BC&harr;Assertiveness (+) and Modesty (&minus;)). Success: predicted sign in &ge; 15/21 architectures for &ge; 12/16 pre-specified octant&harr;facet pairs.
+</p>
+<p>
+<strong>Exploratory:</strong> full 8 &times; 5 octant&harr;domain matrix with Benjamini&ndash;Hochberg FDR; comparison of octant profiles to University of Idaho CSIV-64 norms (&sect;6.5).
+</p>
+
+<h2>7. The hypotheses, descriptively (with answerability audit)</h2>
+
+<p>
+We pre-register eight hypotheses. Thresholds scale from the original seven-model frame (5/7 &asymp; 71%) to the 21-model panel (15/21) where applicable.
+</p>
+
+<div class="callout">
+  <div class="callout-title">H-A &mdash; Three-layer alignment</div>
+  Normal-trait (IPIP), pathological-trait (PID-5), and interpersonal-value (CSIV) layers point compatibly within an architecture.<br>
+  <strong>+</strong> coherent directional pattern across &ge; 15/21 architectures. <strong>&minus;</strong> &lt; 9/21 show coherence. <em>Descriptive (N = 21 cohort).</em>
+</div>
+
+<div class="callout">
+  <div class="callout-title">H-B &mdash; Values&ndash;traits dissociation</div>
+  CSIV (interpersonal importance) dissociates from IPIP/PID-5 dispositional self-description across architectures.<br>
+  <strong>+</strong> CSIV rank-order of architectures differs from IPIP/PID-5 rank-order (Spearman &rho; &lt; .50 for both). <em>Descriptive, answerable.</em>
+</div>
+
+<div class="callout">
+  <div class="callout-title">H-C &mdash; Role-norm override (no-persona operationalization)</div>
+  Models produce "valid" PID-5 protocols (low VRIN, low ORS) but elevated PRD (underreporting), and trait scores compress toward socially-desirable human-norm ranges while CSIV profiles stay differentiated across architectures.<br>
+  <strong>+</strong> PRD &lt; 11 in most sessions AND low IPIP/PID-5 cross-architecture variance AND high CSIV octant variance. <strong>&minus;</strong> PRD in the "genuine" 11&ndash;20 band AND trait variance comparable to CSIV variance. <em>Answerable without persona manipulation.</em>
+</div>
+
+<div class="callout">
+  <div class="callout-title">H-D &mdash; Cross-instrument convergence</div>
+  IPIP-NEO &harr; PID-5 domain convergence (5 directional mappings, all correct sign) is stronger than IPIP-NEO &harr; CSIV within architectures.<br>
+  <strong>+</strong> mean |r| IPIP&ndash;PID &gt; mean |r| IPIP&ndash;CSIV across the panel, with &ge; 4/5 directional mappings correct per architecture. <em>Answerable; effect-size ceiling from Serapio-García.</em>
+</div>
+
+<div class="callout">
+  <div class="callout-title">H-E &mdash; Cross-loading preservation</div>
+  PID-5 Depressivity loads on both Negative Affect and Detachment; Suspiciousness on Detachment (and shows an Antagonism link via IPIP-A).<br>
+  <strong>+</strong> facet-level within-architecture correlations show the predicted dual loadings in &ge; 15/21 models. <em>Answerable descriptively.</em>
+</div>
+
+<div class="callout">
+  <div class="callout-title">H-F &mdash; CSIV circumplex fit with communal displacement</div>
+  Models show good circumplex fit (R&sup2; &gt; .70) with angular displacement toward communal octants (LM/NO/JK).<br>
+  <strong>+</strong> mean R&sup2; &gt; .70 AND mean angle in the communal semicircle across the panel. <strong>&minus;</strong> poor fit (R&sup2; &lt; .50). <em>Answerable.</em>
+</div>
+
+<div class="callout">
+  <div class="callout-title">H-G &mdash; CSIV vectors&harr;Big Five (confirmatory)</div>
+  CSIV AGENTIC/COMMUNAL vectors correlate with IPIP domains in theoretically predicted directions across the 21-model panel (AGENTIC&harr;E +, AGENTIC&harr;C +, COMMUNAL&harr;A +, COMMUNAL&harr;E +).<br>
+  <strong>+</strong> correct signs on &ge; 3/4 vector&harr;domain pairings (Spearman &rho; at architecture level). <em>Descriptive, answerable.</em>
+</div>
+
+<div class="callout">
+  <div class="callout-title">H-H &mdash; CSIV octants&harr;IPIP facets (secondary)</div>
+  Pre-specified octant&harr;facet pairings (circumplex&harr;FFM mapping) show predicted signs within architectures in the majority of the panel.<br>
+  <strong>+</strong> &ge; 12/16 pairings show correct sign in &ge; 15/21 architectures. <em>Secondary, descriptive.</em>
+</div>
+
+<p>
+<strong>Answerability bottom line.</strong> All eight hypotheses are answerable at N = 21 &times; N = 30 in the descriptive sense the proposal &sect;8.1 sanctions. None require inferential generalization to "LLMs as a population." Human-norm comparison (&sect;6.5) and IPIP&harr;PID-5 convergence deliver the Serapio-García benchmark extension.
+</p>
+
+<h2>8. The role-norm question without personas</h2>
+
+<p>
+The original proposal tested role-norm override (H-C) with a persona-conditioned administration: ask the model to respond as a specific person, or as an average person, and see whether trait scores compress toward assistant norms. We are not running personas in v1. Instead, we get the same leverage from the PID-5's own validity scales, which were designed for exactly this job in humans.
+</p>
+<p>
+The PID-5 carries three validity scales built to detect impression management. <strong>VRIN</strong> (inconsistent responding) flags careless or random protocols. <strong>ORS</strong> (overreporting) flags exaggerated symptom endorsement. <strong>PRD</strong> (underreporting, the "positive impression management" direction) flags protocols that present as too well-adjusted &mdash; the socially-desirable direction. An instruction-tuned assistant-role model that is compressing its self-presentation toward an assistant norm should produce a "valid" protocol in the careless-or-random sense (low VRIN, low ORS) but an elevated PRD &mdash; it is under-reporting the very traits the PID-5 is designed to detect. That pattern, paired with compressed trait-score variance across architectures and differentiated CSIV profiles, is the signature of role-norm override.
+</p>
+<p>
+This is, as far as we know, the first application of the PID-5 validity scales to LLM output. The 2024 PID-5 book gives no LLM or synthetic-administration guidance, so the applicability of these scales to LLMs is itself one of the methodological questions this study opens &mdash; we will report the distributions transparently whether or not they behave as the human cutoffs predict.
+</p>
+
+<h2>9. Three-layer joint profiles</h2>
+
+<p>
+For each architecture we combine three layers collected under the same human-like frame: normal-range traits (IPIP-NEO-300), pathological traits (PID-5), and interpersonal values (CSIV). We describe each architecture as a three-layer profile, compare across the 21-model panel, and report the legacy subset (six manuscript models in-panel plus DeepSeek V4 Pro, replacing manuscript DeepSeek V3). No meusvalores.app forced-choice data enter v2.
+</p>
+
+<h2 class="page-break">10. Cost</h2>
+
+<p>
+Sectioned-batched, N = 30, 14 calls per session (6 IPIP + 7 PID + 1 CSIV), <strong>630 sessions total</strong> (21 models). Per-call budget is roughly 1,650 input + 270 output tokens. Budget figures assume parse failures, format drift, and one or two architectures needing smaller-batch re-issues.
+</p>
+<table>
+  <caption>Table 4. Estimated cost per model (sectioned-batched, N = 30, all three instruments &mdash; happy path)</caption>
+  <thead><tr><th>Model</th><th>Est. USD</th></tr></thead>
+  <tbody>
+    <tr><td>GPT-4o-mini</td><td>~$0.15</td></tr>
+    <tr><td>GPT-4o</td><td>~$2.87</td></tr>
+    <tr><td>GPT-4.1</td><td>~$2.30</td></tr>
+    <tr><td>Claude Haiku 4.5</td><td>~$1.26</td></tr>
+    <tr><td>Claude Sonnet 4.6</td><td>~$3.80</td></tr>
+    <tr><td>Claude Opus 4.6</td><td>~$6.50</td></tr>
+    <tr><td>Gemini 2.5 Flash Lite</td><td>~$0.17</td></tr>
+    <tr><td>Gemini 2.5 Flash</td><td>~$0.50</td></tr>
+    <tr><td>Gemini 2.5 Pro</td><td>~$1.50</td></tr>
+    <tr><td>Llama 3.1 8B</td><td>~$0.05</td></tr>
+    <tr><td>Llama 3.1 70B</td><td>~$0.35</td></tr>
+    <tr><td>Llama 3.3 70B</td><td>~$0.22</td></tr>
+    <tr><td>Mistral Small 3.2 24B</td><td>~$0.10</td></tr>
+    <tr><td>Mistral Medium 3.1</td><td>~$0.55</td></tr>
+    <tr><td>Mistral Large</td><td>~$2.07</td></tr>
+    <tr><td>DeepSeek V4 Flash</td><td>~$0.12</td></tr>
+    <tr><td>DeepSeek V3.2</td><td>~$0.22</td></tr>
+    <tr><td>DeepSeek V4 Pro</td><td>~$0.45</td></tr>
+    <tr><td>Qwen 2.5 72B</td><td>~$0.41</td></tr>
+    <tr><td>Qwen3 Max</td><td>~$0.85</td></tr>
+    <tr><td>Qwen3 235B A22B</td><td>~$0.55</td></tr>
+    <tr><td><strong>Subtotal (21 models, happy path)</strong></td><td><strong>~$24&ndash;28</strong></td></tr>
+  </tbody>
+</table>
+<table>
+  <caption>Table 5. Estimated total cost (v2, less-conservative budget)</caption>
+  <thead><tr><th>Component</th><th>Est. cost</th></tr></thead>
+  <tbody>
+    <tr><td>Sectioned-batched primary (N = 30, 21 models, happy path)</td><td>~$24&ndash;28</td></tr>
+    <tr><td>Re-runs for parse failures / format drift (~20% of sessions)</td><td>~$8&ndash;10</td></tr>
+    <tr><td>Smaller-batch re-issues (truncation on largest IPIP block)</td><td>~$4&ndash;6</td></tr>
+    <tr><td>Item-by-item fallback contingency (N = 10, one model/instrument)</td><td>~$4&ndash;6</td></tr>
+    <tr><td>Scoring and psychometrics (local)</td><td>$0</td></tr>
+    <tr><td><strong>Subtotal, less-conservative</strong></td><td><strong>~$40&ndash;50</strong></td></tr>
+    <tr><td>+ 35% overrun buffer</td><td><strong>~$55&ndash;68</strong></td></tr>
+    <tr><td><strong>Working budget</strong></td><td><strong>~$70&ndash;90</strong></td></tr>
+    <tr><td>Hard ceiling (two architectures, full item-by-item on two instruments)</td><td>~$100&ndash;110</td></tr>
+    <tr><td>Cost-reduction lever: PID-5-SF (100 items) if needed</td><td>&minus;$8&ndash;10</td></tr>
+  </tbody>
+</table>
+<p>
+Claude Opus 4.6 and GPT-4o-family models dominate spend. Working budget <strong>~$65&ndash;85</strong> is held against the full 21-model run.
+</p>
+
+<h2>11. What is deferred and why</h2>
+
+<ul>
+  <li><strong>meusvalores.app / macrotheme values:</strong> forced-choice tournament under a different frame and language; separate pre-registered study when traits and values share administration.</li>
+  <li><strong>Behavioural criterion tasks:</strong> ad hoc tasks lack LLM-validated benchmarks; deferred unless human-grounded paradigms are adopted (e.g. ActTraitBench-style).</li>
+  <li><strong>Public / identified vs anonymous administration:</strong> visibility manipulation for social-desirability and role-norm (H-C extension); separate OSF registration after v2.</li>
+  <li><strong>Alternative B (stimulus-control reliability contrast):</strong> batched vs item-by-item. Revisit if v2 surfaces format-sensitive architectures.</li>
+  <li><strong>Alternative C (forced-choice CSIV extension):</strong> Bradley&ndash;Terry duels on CSIV octants. Revisit as bridge to meusvalores forced-choice work.</li>
+  <li><strong>Persona-conditioned mode:</strong> deferred; H-C uses PID-5 validity scales instead (&sect;8).</li>
+</ul>
+
+<h2>12. Limitations, stated plainly</h2>
+
+<ul>
+  <li><strong>N = 21 fixed-panel cohort.</strong> Cross-architecture and intra-lab claims are descriptive. N = 30 sessions per model governs within-architecture precision.</li>
+  <li><strong>English-only.</strong> CSIV has no validated Brazilian Portuguese version.</li>
+  <li><strong>Version drift.</strong> Model weights may change during collection. We log version strings and dates.</li>
+  <li><strong>No LLM guidance in the PID-5 book.</strong> Validity scales (VRIN/ORS/PRD) were built for humans; applicability to LLMs is itself an open question.</li>
+  <li><strong>DeepSeek discontinuity.</strong> Values manuscript used DeepSeek V3; personality panel uses V4 Flash (tier 1), V3.2 (tier 2), and V4 Pro (tier 3).</li>
+  <li><strong>Tier ladders are provider-specific.</strong> Meta is size/version; DeepSeek mixes V4 (Flash/Pro) with V3.2 at mid-tier.</li>
+</ul>
+
+<h2>13. Novel contribution</h2>
+
+<p>
+Serapio-García et&nbsp;al.&nbsp;(2025) measured normal-range personality (IPIP-NEO + BFI) in 18 LLMs. v2 extends this in four ways. First, pathological personality (PID-5) as a second trait layer with IPIP&harr;PID-5 convergence in LLMs. Second, interpersonal values (CSIV circumplex) as a third layer with circumplex fit and pre-registered CSIV&harr;Big Five links at vector and octant level. Third, a 21-model panel with intra-laboratory tier comparison (seven providers &times; three tiers). Fourth, human-like English administration benchmarked against human norms on all three instruments. The panel is a fixed cohort, not a sample of LLMs; the contribution is a structured descriptive account of how normal traits, pathological traits, and interpersonal values co-occur across architectures and tiers.
+</p>
+
+<p class="sign-off">Cainã &middot; meusvalores.app &middot; June 2026 &middot; methodology v2</p>
+
+<h2 class="page-break">14. References</h2>
+
+<div class="refs">
+  <p>Anderson, J. L., Sellbom, M., Wygant, D. B., &amp; Edens, J. F. (2013). Integrating normal and pathological personality: Relating the DSM-5 trait-dimensional model to general traits of personality. <em>Assessment</em>, 21(2), 197&ndash;208.</p>
+  <p>Gore, W. L., &amp; Widiger, T. A. (2013). The DSM-5 dimensional trait model and five factor models of general personality. <em>Journal of Abnormal Psychology</em>, 122(3), 816&ndash;821.</p>
+  <p>Du, S., Konstabel, K., &amp; Realo, A. (2020). In search of convergence between the main dimensions of interpersonal and basic human values in the context of personality traits. <em>Personality and Individual Differences</em>, 164, 110905.</p>
+  <p>John, O. P., &amp; Srivastava, S. (1999). The Big Five trait taxonomy: History, measurement, and theoretical perspectives. In L. A. Pervin &amp; O. P. John (Eds.), <em>Handbook of personality: Theory and research</em> (2nd ed., pp. 102&ndash;138). Guilford Press.</p>
+  <p>Johnson, J. A. (2014). Measuring thirty facets of the Five Factor Model with a 120-item public domain inventory: Development of the IPIP-NEO-120. <em>Journal of Research in Personality</em>, 51, 78&ndash;89.</p>
+  <p>Locke, K. D. (2000). Circumplex scales of interpersonal values: Reliability, validity, and applicability to interpersonal problems and personality disorders. <em>Journal of Personality Assessment</em>, 75(2), 249&ndash;267.</p>
+  <p>Locke, K. D., &amp; Adamic, E. (2012). Interpersonal circumplex vector length and interpersonal decision making. <em>Personality and Individual Differences</em>, 53, 764&ndash;769.</p>
+  <p>Markon, K. R., Fossati, A., Somma, A., &amp; Krueger, R. F. (2024). <em>Understanding the Personality Inventory for DSM-5 (PID-5)</em>. APA Publishing.</p>
+  <p>Parks-Leduc, L., Feldman, G., &amp; Bardi, A. (2015). Labels and relations between values and traits: A close look at the Big Five. <em>Personality and Individual Differences</em>, 77, 1&ndash;6.</p>
+  <p>Schwartz, S. H. (1992). Universals in the content and structure of values: Theoretical advances and empirical tests in 20 countries. <em>Advances in Experimental Social Psychology</em>, 25, 1&ndash;65.</p>
+  <p>Serapio-García, G., Safdari, M., Crepy, C., Sun, L., Fitz, S., Romero, P., Abdulhai, M., Faust, A., &amp; Matarić, M. (2025). A psychometric framework for evaluating and shaping personality traits in large language models. <em>Nature Machine Intelligence</em>, 7(12), 1954&ndash;1968.</p>
+  <p>Somma, A., Krueger, R. F., Markon, K. R., &amp; Fossati, A. (2019). The replicability of the Personality Inventory for DSM-5 (PID-5) domain and facet structure across informants: A meta-analysis. <em>Psychological Assessment</em>, 31(7), 861&ndash;877.</p>
+  <p>Suzuki, T., Griffin, B., &amp; Samuel, D. B. (2015). Capturing the DSM-5 alternative personality model with the NEO-PI-R. <em>Journal of Abnormal Psychology</em>, 124(2), 343&ndash;354.</p>
+  <p>Suzuki, T., Samuel, D. B., Lund, S. N., &amp; Griffin, B. (2017). Personality inventory for DSM-5 (PID-5) facets in the five-factor model space. <em>Journal of Personality</em>, 85(2), 220&ndash;231.</p>
+  <p><em>[Values manuscript, Cainã, submitted 2026]</em> Value priorities under forced choice in large language models: a stimulus-control analysis of machine behavior. Manuscript under review.</p>
+  <p><em>[Pedro proposal, Cainã, June 2026]</em> Values and personality in large language models: a joint architecture study &mdash; proposal for collaboration with Pedro.</p>
+</div>
+
+</body>
+</html>

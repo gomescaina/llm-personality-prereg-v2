@@ -1,0 +1,8 @@
+# gerado na corrida — não congelar no OSF
+v1-study/outputs/*
+!v1-study/outputs/.gitkeep
+v1-study/.pytest_cache/
+**/__pycache__/
+*.pyc
+.env
+.venv/
